@@ -9,23 +9,22 @@ import lombok.extern.slf4j.Slf4j;
 public class Editor extends TextArea {
     ObjectMapper mapper;
 
-    public Editor(String title) {
+    public Editor() {
         mapper = new ObjectMapper();
         setWidth("50%");
-        setPlaceholder(title);
+        getStyle().set("color", "white");
+        getStyle().set("border-radius", "10px");
+        getStyle().set("font-family", "Consolas");
         getStyle().set("background-color", "rgba(0, 0, 0, 0.87)");
-        addValueChangeListener(event -> beautify(event.getValue()));
     }
 
-    private void beautify(String value) {
-        if(getValue()!=null && !getValue().isEmpty()){
-            try {
-                String pretty = mapper.writerWithDefaultPrettyPrinter()
-                                 .writeValueAsString(mapper.readTree(value));
-                setValue(pretty);
-            } catch (JsonProcessingException e) {
-                log.warn("we can't serialise the string {} to json",getValue());
-            }
+    protected void beautify(String value) {
+        try {
+            String pretty = mapper.writerWithDefaultPrettyPrinter()
+                .writeValueAsString(mapper.readTree(value));
+            super.setValue(pretty);
+        } catch (JsonProcessingException e) {
+            log.warn("we can't serialise the string {} to json", getValue());
         }
     }
 }

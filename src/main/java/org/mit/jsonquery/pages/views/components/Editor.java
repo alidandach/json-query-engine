@@ -1,4 +1,4 @@
-package org.mit.jsonquery.pages.components;
+package org.mit.jsonquery.pages.views.components;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

@@ -1,4 +1,4 @@
-package org.mit.jsonquery.pages.components;
+package org.mit.jsonquery.pages.views.components;
 
 import lombok.extern.slf4j.Slf4j;
 

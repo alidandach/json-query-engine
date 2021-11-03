@@ -1,4 +1,4 @@
-package org.mit.jsonquery.pages.components;
+package org.mit.jsonquery.pages.views.components;
 
 import com.jayway.jsonpath.JsonPath;
 import lombok.extern.slf4j.Slf4j;

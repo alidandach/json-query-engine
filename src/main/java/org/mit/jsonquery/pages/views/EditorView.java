@@ -6,12 +6,14 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import org.mit.jsonquery.pages.MainView;
+import com.vaadin.flow.router.RouteAlias;
+import org.mit.jsonquery.pages.MainLayout;
 import org.mit.jsonquery.pages.views.components.InputEditor;
 import org.mit.jsonquery.pages.views.components.OutputEditor;
 
-@PageTitle("Editor")
-@Route(value = "editor", layout = MainView.class)
+@PageTitle("Console")
+@Route(value = "console", layout = MainLayout.class)
+@RouteAlias(value = "", layout = MainLayout.class)
 public class EditorView extends VerticalLayout {
 	public EditorView() {
 		InputEditor input = new InputEditor();

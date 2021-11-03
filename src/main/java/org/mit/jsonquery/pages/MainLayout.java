@@ -22,11 +22,11 @@ import org.mit.jsonquery.pages.views.AboutView;
 import org.mit.jsonquery.pages.views.EditorView;
 
 @PageTitle("Main")
-public class MainView extends AppLayout {
+public class MainLayout extends AppLayout {
 
 	private H1 viewTitle;
 
-	public MainView() {
+	public MainLayout() {
 		setPrimarySection(Section.DRAWER);
 		addToNavbar(true, createHeaderContent());
 		addToDrawer(createDrawerContent());
@@ -43,16 +43,16 @@ public class MainView extends AppLayout {
 
 		Header header = new Header(toggle, viewTitle);
 		header.addClassNames("bg-base", "border-b", "border-contrast-10", "box-border", "flex", "h-xl", "items-center",
-			"w-full");
+				"w-full");
 		return header;
 	}
 
 	private Component createDrawerContent() {
-		H2 appName = new H2("My App");
+		H2 appName = new H2("JSON Query Engine");
 		appName.addClassNames("flex", "items-center", "h-xl", "m-0", "px-m", "text-m");
 
 		com.vaadin.flow.component.html.Section section = new com.vaadin.flow.component.html.Section(appName,
-			createNavigation(), createFooter());
+				createNavigation(), createFooter());
 		section.addClassNames("flex", "flex-col", "items-stretch", "max-h-full", "min-h-full");
 		return section;
 	}
@@ -80,7 +80,7 @@ public class MainView extends AppLayout {
 
 	private List<RouterLink> createLinks() {
 		MenuItemInfo[] menuItems = new MenuItemInfo[]{ //
-			new MenuItemInfo("Hello World", "la la-globe", EditorView.class), //
+			new MenuItemInfo("Console", "la la-desktop", EditorView.class), //
 
 			new MenuItemInfo("About", "la la-file", AboutView.class), //
 
